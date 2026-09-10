@@ -297,8 +297,9 @@ strong { font-weight: 700; }
 
 .nav__dropdown-toggle::after {
   content: ' ▾';
-  font-size: 1em;
-  opacity: 1;
+  font-size: 1.25rem;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 .nav__dropdown {
