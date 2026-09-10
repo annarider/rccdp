@@ -60,32 +60,37 @@ Found in `wp-content/uploads/2025/01/`:
 
 Determine canonical version before including in static site.
 
-## Static file layout (target)
+## Static file layout (actual — pages use subdirectory index.html pattern)
 ```
 /
   index.html
-  about.html
-  board.html
-  staff.html
-  schedules.html
-  curriculum.html
-  nutrition.html
-  gallery.html
-  policies.html
-  resources.html
-  enroll.html
-  contact.html
-  privacy-policy.html
   _redirects
+  about/
+    index.html
+    board/index.html
+    staff/index.html
+    annual-reports/index.html
+  programs/
+    curriculum/index.html
+    schedules/index.html
+    nutrition/index.html
+  gallery/index.html
+  policies/index.html
+  resources/index.html
+  enroll/index.html
+  contact/index.html
+  privacy-policy/index.html
   assets/
     css/
       style.css
     js/
-      lightbox.js     ← custom PDF + image lightbox (no library)
+      components.js   ← shared nav + footer injected into every page
+      lightbox.js     ← custom PDF + image lightbox (not yet built)
     images/
-      logo.png
-      staff/          ← 21 staff headshots
-      gallery/        ← photo gallery images
+      cropped-RCCDP-logo_v2b_blue_text.png  ← square icon logo used in nav
+      hero-bg.jpg     ← homepage hero photo
+      SY-*.jpg        ← 10 professional classroom photos (SY-0001 to SY-0375)
+      staff/          ← 21 staff headshots; 18 are 682×1024 2026 originals
     documents/
       annual-reports/
       handbooks/
@@ -107,19 +112,71 @@ Key images by year folder: 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
 Pull via rsync: `rsync -avz webdev@45.77.186.223:/home/129366.cloudwaysapps.com/utvwvxhaeu/public_html/wp-content/uploads/ assets/images/wp-uploads/`
 
 ## Migration status
+
+### Infrastructure
 - [x] URL crawl complete (14 pages)
 - [x] Content inventory complete (all pages)
 - [x] Plugin audit complete
 - [x] Drive folder IDs extracted from WP shortcodes
-- [ ] Download images from server (rsync wp-content/uploads)
+- [x] Images rsynced from WP server → `assets/images/wp-uploads/` (271MB, gitignored)
+- [x] GitHub repo made public (required for Netlify free tier)
+- [x] Netlify auto-deploys on push to `main` — site is live
+- [x] Credentials moved to `SECRETS.md` (gitignored)
+- [ ] DB dump (WP-CLI: `wp db export` from public_html) — not urgent, backup only
 - [ ] Download PDFs from Google Drive (authenticate as annarider@rccdp.org)
-- [ ] DB dump (WP-CLI: `wp db export` from public_html)
-- [ ] Build static HTML pages
-- [ ] Build PDF/image lightbox
-- [ ] Build sample interactive form (Netlify Forms)
-- [ ] Deploy draft to Netlify preview URL
+- [ ] Finalize `_redirects` file (old WP URLs → new URLs, 301s)
+- [ ] Confirm Netlify is actually connected to annarider/rccdp repo
+
+### Design & shared components
+- [x] Design system: Amatic SC (headings) + Merriweather (body) + Roboto (UI)
+- [x] Color tokens: navy `#014e91` primary, pink `#d43c67` accent (Infinity Pro palette)
+- [x] `components.js` — shared nav + footer injected into every page
+- [x] Nav: Facebook icon, GiveButter donate button, working dropdowns, visible caret
+- [x] Footer: Facebook circle icon, copyright, license number
+- [x] Per-page hero photos via `--page-hero-img` CSS variable + `::before` overlay
+- [x] Notepad ruled-line texture on alternating sections (approved by client)
+
+### Pages — all 14 built
+- [x] Homepage (`/`) — photo strips, collage, program cards, nutrition section, CTAs
+- [x] About (`/about/`) — page hero photo
+- [x] Board of Directors (`/about/board/`)
+- [x] **Staff (`/about/staff/`)** — full verbatim first-person bios, portrait photos (682×1024 uncropped), collapsible TOC; 3 staff still have 600×600 (Latu, Ontiveros, Penisini — no 2026 originals found)
+- [x] Annual Reports (`/about/annual-reports/`)
+- [x] Curriculum (`/programs/curriculum/`)
+- [x] Schedules (`/programs/schedules/`)
+- [x] Nutrition (`/programs/nutrition/`)
+- [x] Gallery (`/gallery/`)
+- [x] Policies (`/policies/`)
+- [x] Resources (`/resources/`)
+- [x] Enroll (`/enroll/`)
+- [x] Contact (`/contact/`)
+- [x] Privacy Policy (`/privacy-policy/`)
+
+### Content still needing verbatim fixes
+- [ ] **Board page** — bios have invented/placeholder content; needs verbatim from live site
+- [ ] **About page** — children's stories need full verbatim text; remove border boxes around them
+- [ ] **Privacy policy** — missing sections: Comments, Media, Embedded content, Data retention
+- [ ] **Resources page** — missing "Single Parents Online Education" section
+
+### Assets still needed
+- [ ] PDFs from Google Drive: Annual Reports, Family Handbooks (EN+ES), Full-cost Tuition Application
+- [ ] Canonical subsidy PDFs — 5 versions on server in `wp-content/uploads/2025/01/`; determine which is current
+- [ ] Gallery images — from Drive folder (see SECRETS.md for folder ID)
+- [ ] 2026 staff portraits for Ana Latu, Araceli Ontiveros, Daneyah Penisini (not found in wp-uploads/2026/04/)
+- [ ] PDF thumbnail previews — `pdftoppm` first-page JPEGs once PDFs land
+- [ ] Confirm Facebook URL — currently using `facebook.com/rccdp` (unverified)
+- [ ] Google Maps embed on Contact page (client confirmed they want it)
+
+### Features still to build
+- [ ] PDF/image lightbox (`assets/js/lightbox.js`) — iframe overlay, mobile falls back to new tab
+- [ ] Sample interactive contact form (Netlify Forms) — pending client decision (static PDFs vs web form)
 - [ ] Client call — form decision
-- [ ] Finalize URL redirect map (_redirects file)
+
+### Launch checklist
+- [ ] All content verified verbatim
+- [ ] All PDFs in place with lightbox working
+- [ ] `_redirects` complete for all 14 old WP URLs
+- [ ] Client review and sign-off
 - [ ] Launch
 
 ## Netlify
