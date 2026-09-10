@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery | Redwood City Child Development Program</title>
+  <meta name="description" content="Photos from RCCDP classrooms, activities, and events.">
+  <link rel="icon" type="image/png" href="/assets/images/favicon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span> / Gallery</span>
+      </nav>
+      <h1>Photo Gallery</h1>
+      <p>A glimpse into life at RCCDP — learning, playing, and growing together.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div id="gallery-grid" class="gallery-grid">
+        <!-- Gallery images will be populated here once downloaded from Google Drive.
+             Each image uses the pattern below. Add as many as needed. -->
+
+        <!-- Placeholder notice while gallery images are downloaded -->
+        <div style="grid-column:1/-1">
+          <div class="notice">
+            <strong>Gallery coming soon!</strong> Photos are being downloaded from Google Drive (folder ID: <code>0AOhgqBjn5CfQUk9PVA</code>) and will be placed in <code>assets/images/gallery/</code>.
+            Once images are in place, replace this notice with photo cards using the template below.
+          </div>
+
+          <!-- Template for each photo (copy and repeat):
+          <button class="gallery-thumb" data-src="/assets/images/gallery/photo-001.jpg" data-title="RCCDP classroom activity" aria-label="View larger: RCCDP classroom activity">
+            <img src="/assets/images/gallery/photo-001.jpg" alt="Children engaged in classroom activity at RCCDP" loading="lazy" width="400" height="400">
+          </button>
+          -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- Image Lightbox -->
+<div class="lightbox-overlay" id="img-lightbox" role="dialog" aria-modal="true" aria-label="Photo Viewer">
+  <div class="lightbox-box" style="max-width:960px">
+    <div class="lightbox-bar">
+      <span class="lightbox-title" id="lightbox-title"></span>
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close photo viewer">&times;</button>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:center; padding:1rem; min-height:400px; background:#111">
+      <img id="lightbox-img" src="" alt="" style="max-width:100%; max-height:75vh; border-radius:var(--radius-sm); object-fit:contain">
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="/assets/js/components.js"></script>
+<script src="/assets/js/lightbox.js"></script>
+</body>
+</html>

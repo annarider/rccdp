@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policies &amp; Procedures | Redwood City Child Development Program</title>
+  <meta name="description" content="Download RCCDP's Family Handbook in English and Spanish.">
+  <link rel="icon" type="image/png" href="/assets/images/favicon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span> / </span><a href="/programs/curriculum/">Programs</a><span> / Policies &amp; Procedures</span>
+      </nav>
+      <h1>Policies &amp; Procedures</h1>
+      <p>Family Handbooks in English and Spanish.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:760px">
+      <p style="margin-bottom:2rem">Click a handbook below to preview or download the PDF.</p>
+
+      <div class="doc-grid">
+
+        <a href="/assets/documents/handbooks/rccdp-family-handbook-english.pdf"
+           class="doc-card" data-lightbox data-title="RCCDP Family Handbook (English)">
+          <div class="doc-card__icon" aria-hidden="true">📘</div>
+          <div class="doc-card__text">
+            <div class="doc-card__name">Family Handbook</div>
+            <div class="doc-card__meta">English · PDF</div>
+          </div>
+        </a>
+
+        <a href="/assets/documents/handbooks/rccdp-family-handbook-spanish.pdf"
+           class="doc-card" data-lightbox data-title="Manual Familiar RCCDP (Español)">
+          <div class="doc-card__icon" aria-hidden="true">📗</div>
+          <div class="doc-card__text">
+            <div class="doc-card__name">Manual Familiar</div>
+            <div class="doc-card__meta">Español · PDF</div>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="notice" style="margin-top:2rem">
+        <strong>Note:</strong> Handbooks are downloaded from Google Drive and stored here as PDFs. To update, replace the files in <code>assets/documents/handbooks/</code>.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- PDF Lightbox -->
+<div class="lightbox-overlay" id="pdf-lightbox" role="dialog" aria-modal="true" aria-label="PDF Preview">
+  <div class="lightbox-box">
+    <div class="lightbox-bar">
+      <span class="lightbox-title" id="lightbox-title"></span>
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close preview">&times;</button>
+    </div>
+    <iframe class="lightbox-iframe" id="lightbox-iframe" title="PDF preview"></iframe>
+    <div class="lightbox-fallback" id="lightbox-fallback" style="display:none">
+      PDF preview not available on this device. <a id="lightbox-download" href="#">Download the PDF instead →</a>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="/assets/js/components.js"></script>
+<script src="/assets/js/lightbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+# RCCDP — Netlify Redirects
+# Format: old-url  new-url  status-code
+# Old WordPress URLs → new static site URLs
+
+# About
+/about/annual-report/           /about/annual-reports/          301
+/about/annual-report             /about/annual-reports/          301
+/about/board-of-directors/      /about/board/                   301
+/about/board-of-directors        /about/board/                   301
+/about/management-and-staff/    /about/staff/                   301
+/about/management-and-staff      /about/staff/                   301
+
+# Programs
+/classroom-schedules/            /programs/schedules/            301
+/classroom-schedules             /programs/schedules/            301
+/curriculum-by-levels/           /programs/curriculum/           301
+/curriculum-by-levels            /programs/curriculum/           301
+/nutrition-programs/             /programs/nutrition/            301
+/nutrition-programs              /programs/nutrition/            301
+/policies-procedures/            /policies/                      301
+/policies-procedures             /policies/                      301
+/tuition-rates-applications/     /enroll/                        301
+/tuition-rates-applications      /enroll/                        301
+
+# Gallery
+/pages/gallery/                  /gallery/                       301
+/pages/gallery                   /gallery/                       301
+
+# Contact / Resources
+/contact/resources-links/        /resources/                     301
+/contact/resources-links         /resources/                     301
+
+# WordPress admin — block cleanly
+/wp-admin/                       /                               301
+/wp-admin                        /                               301
+/wp-login.php                    /                               301

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annual Reports | Redwood City Child Development Program</title>
+  <meta name="description" content="Download RCCDP's annual reports to learn how we serve our community.">
+  <link rel="icon" type="image/png" href="/assets/images/favicon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span> / </span><a href="/about/">About</a><span> / Annual Reports</span>
+      </nav>
+      <h1>Annual Reports</h1>
+      <p>Transparency in how we serve our community — year after year.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:760px">
+      <p style="margin-bottom:2rem">Click any report below to preview or download the PDF.</p>
+
+      <div class="doc-grid" id="annual-reports-list">
+        <!-- Reports will be added here as PDFs arrive from Google Drive -->
+        <!-- Placeholder example structure: -->
+        <a href="/assets/documents/annual-reports/rccdp-annual-report-2024.pdf"
+           class="doc-card" data-lightbox data-title="RCCDP Annual Report 2024">
+          <div class="doc-card__icon" aria-hidden="true">📄</div>
+          <div class="doc-card__text">
+            <div class="doc-card__name">Annual Report 2024</div>
+            <div class="doc-card__meta">PDF — click to preview</div>
+          </div>
+        </a>
+
+        <a href="/assets/documents/annual-reports/rccdp-annual-report-2023.pdf"
+           class="doc-card" data-lightbox data-title="RCCDP Annual Report 2023">
+          <div class="doc-card__icon" aria-hidden="true">📄</div>
+          <div class="doc-card__text">
+            <div class="doc-card__name">Annual Report 2023</div>
+            <div class="doc-card__meta">PDF — click to preview</div>
+          </div>
+        </a>
+
+        <a href="/assets/documents/annual-reports/rccdp-annual-report-2022.pdf"
+           class="doc-card" data-lightbox data-title="RCCDP Annual Report 2022">
+          <div class="doc-card__icon" aria-hidden="true">📄</div>
+          <div class="doc-card__text">
+            <div class="doc-card__name">Annual Report 2022</div>
+            <div class="doc-card__meta">PDF — click to preview</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="notice" style="margin-top:2rem">
+        <strong>Note:</strong> Annual reports are downloaded from Google Drive and stored here as static PDFs. To add a new report, place the PDF in <code>assets/documents/annual-reports/</code> and add a card to this page.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- PDF Lightbox -->
+<div class="lightbox-overlay" id="pdf-lightbox" role="dialog" aria-modal="true" aria-label="PDF Preview">
+  <div class="lightbox-box">
+    <div class="lightbox-bar">
+      <span class="lightbox-title" id="lightbox-title"></span>
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close preview">&times;</button>
+    </div>
+    <iframe class="lightbox-iframe" id="lightbox-iframe" title="PDF preview"></iframe>
+    <div class="lightbox-fallback" id="lightbox-fallback" style="display:none">
+      PDF preview not available on this device. <a id="lightbox-download" href="#">Download the PDF instead →</a>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="/assets/js/components.js"></script>
+<script src="/assets/js/lightbox.js"></script>
+</body>
+</html>
