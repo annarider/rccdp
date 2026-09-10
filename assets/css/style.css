@@ -473,6 +473,49 @@ strong { font-weight: 700; }
   font-family: var(--font-ui);
 }
 
+/* --- Photo strips (homepage) ------------------------------- */
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  height: 280px;
+}
+.photo-strip--2 {
+  grid-template-columns: repeat(2, 1fr);
+  height: 240px;
+}
+.photo-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Two-photo collage in "about" section */
+.photo-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+}
+.photo-collage img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+.photo-collage img:first-child {
+  grid-column: 1 / -1; /* full width top photo */
+  height: 260px;
+}
+
+@media (max-width: 600px) {
+  .photo-strip { height: 160px; }
+  .photo-strip--2 { height: 140px; }
+  .photo-collage img { height: 160px; }
+  .photo-collage img:first-child { height: 200px; }
+}
+
 /* --- Hero -------------------------------------------------- */
 .hero {
   background: var(--clr-primary);
@@ -486,7 +529,7 @@ strong { font-weight: 700; }
   position: absolute;
   inset: 0;
   background: url('/assets/images/hero-bg.jpg') center/cover no-repeat;
-  opacity: .18;
+  opacity: .32;
 }
 .hero__inner {
   position: relative;
@@ -516,7 +559,20 @@ strong { font-weight: 700; }
   background: var(--clr-primary);
   color: #fff;
   padding-block: clamp(2.5rem, 6vw, 4.5rem);
+  position: relative;
+  overflow: hidden;
 }
+/* Background photo overlay — set via --page-hero-img inline style */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--page-hero-img, none);
+  background-size: cover;
+  background-position: center;
+  opacity: .28;
+}
+.page-hero > .container { position: relative; }
 .page-hero h1 { color: #fff; margin-bottom: .4rem; }
 .page-hero p { opacity: .85; max-width: 60ch; }
 
@@ -607,12 +663,11 @@ strong { font-weight: 700; }
 
 .staff-row__photo {
   width: 200px;
-  height: 200px;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;           /* full portrait — no crop */
   border-radius: var(--radius);
   flex-shrink: 0;
   background: var(--clr-primary-light);
+  display: block;
 }
 
 .staff-row__info { flex: 1; min-width: 0; }
@@ -637,7 +692,7 @@ strong { font-weight: 700; }
 
 @media (max-width: 580px) {
   .staff-row { flex-direction: column; gap: 1rem; }
-  .staff-row__photo { width: 100%; height: 260px; object-position: center 20%; }
+  .staff-row__photo { width: 100%; height: auto; }
 }
 
 /* Board card */
