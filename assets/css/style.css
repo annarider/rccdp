@@ -297,21 +297,21 @@ strong { font-weight: 700; }
 
 .nav__dropdown-toggle::after {
   content: ' ▾';
-  font-size: .7em;
-  opacity: .7;
+  font-size: 1em;
+  opacity: 1;
 }
 
 .nav__dropdown {
   display: none;
   position: absolute;
-  top: calc(100% + 6px);
+  top: 100%;          /* flush — no gap so cursor stays in hover area */
   left: 0;
   min-width: 210px;
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow);
-  padding: .4rem 0;
+  padding: .6rem 0 .4rem; /* top padding creates visual breathing room */
   z-index: 100;
 }
 .nav__dropdown a {
