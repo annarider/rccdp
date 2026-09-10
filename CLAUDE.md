@@ -5,7 +5,7 @@ Migrating rccdp.org from WordPress (Cloudways) to a plain HTML/CSS/JS static sit
 
 ## Client
 - **Site**: rccdp.org — Redwood City Child Development Program
-- **Contact email on record**: annarider@rccdp.org
+- **Contact email on record**: anna@luckypixelsdesign.com
 - All server, WP admin, Drive, and Netlify credentials → **see `SECRETS.md`** (gitignored)
 
 ## Server (Cloudways — keep until migration ships)
@@ -48,7 +48,7 @@ Redirects go in `_redirects` (Netlify format: `old  new  301`). Build the full m
 ## Google Drive — source of truth for PDFs and gallery
 Plugin was `use-your-drive` authenticated as `annarider@rccdp.org`. Drive folder IDs → **see `SECRETS.md`** (gitignored).
 
-To access via Drive MCP: authenticate as `annarider@rccdp.org` (ask the user which account to use BEFORE calling any Drive MCP tool).
+To access via Drive MCP: authenticate as email in secrets.md (ask the user which account to use BEFORE calling any Drive MCP tool).
 
 ## Subsidy PDFs already on the server
 Found in `wp-content/uploads/2025/01/`:
