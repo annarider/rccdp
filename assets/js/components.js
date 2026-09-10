@@ -12,7 +12,7 @@
       <div class="nav__inner">
 
         <a href="/" class="nav__logo" aria-label="RCCDP Home">
-          <img src="/assets/images/logo.png"
+          <img src="/assets/images/cropped-RCCDP-logo_v2b_blue_text.png"
                alt="Redwood City Child Development Program logo"
                width="46" height="46"
                onerror="this.style.display='none'">
@@ -63,7 +63,18 @@
           </li>
 
           <li class="nav__item">
-            <a href="https://www.paypal.com/donate/?hosted_button_id=RCCDP"
+            <a href="https://www.facebook.com/rccdp"
+               class="nav__link nav__link--social"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="RCCDP on Facebook">
+              <svg class="nav__fb-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="20" height="20">
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" fill="currentColor"/>
+              </svg>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="https://givebutter.com/rccdp"
                class="nav__link nav__link--donate"
                target="_blank" rel="noopener noreferrer">Donate</a>
           </li>
@@ -110,9 +121,20 @@
             </ul>
           </li>
         </ul>
-        <a href="https://www.paypal.com/donate/?hosted_button_id=RCCDP"
-           class="nav__mobile-donate"
-           target="_blank" rel="noopener noreferrer">Donate</a>
+        <div class="nav__mobile-actions">
+          <a href="https://www.facebook.com/rccdp"
+             class="nav__mobile-social"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="RCCDP on Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="20" height="20">
+              <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" fill="currentColor"/>
+            </svg>
+            Facebook
+          </a>
+          <a href="https://givebutter.com/rccdp"
+             class="nav__mobile-donate"
+             target="_blank" rel="noopener noreferrer">Donate</a>
+        </div>
       </div>
 
     </nav>
@@ -163,6 +185,17 @@
             </ul>
           </div>
 
+        </div>
+
+        <div class="footer__social">
+          <a href="https://www.facebook.com/rccdp"
+             class="footer__social-link"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="RCCDP on Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24">
+              <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" fill="currentColor"/>
+            </svg>
+          </a>
         </div>
 
         <div class="footer__bottom">

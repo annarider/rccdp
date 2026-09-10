@@ -1,6 +1,9 @@
 # WP image dump — local working copy only, not for git
 assets/images/wp-uploads/
 
+# Private credentials — never commit
+SECRETS.md
+
 # macOS
 .DS_Store
 **/.DS_Store

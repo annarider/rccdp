@@ -1,21 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;500;700&display=swap');
+
 /* =========================================================
    RCCDP — style.css
    Redwood City Child Development Program
-   Design: warm, modern, kid-friendly, accessible (WCAG AA)
-   Font: Poppins (Google Fonts)
+   Design: warm, kid-friendly, accessible (WCAG AA)
+   Headings: Amatic SC  |  Body: Merriweather  |  UI: Roboto
    ========================================================= */
 
 /* --- Design Tokens ---------------------------------------- */
 :root {
-  --clr-primary:       #1d7a5f;   /* deep teal — trustworthy, growth */
-  --clr-primary-dark:  #145e49;
-  --clr-primary-light: #e6f4f0;
+  --clr-primary:       #014e91;   /* Infinity Pro navy */
+  --clr-primary-dark:  #013a6b;
+  --clr-primary-light: #e8f0fb;
 
-  --clr-accent:        #f07b2f;   /* warm orange — energy, joy */
-  --clr-accent-dark:   #d4621a;
-  --clr-accent-light:  #fef3eb;
+  --clr-accent:        #d43c67;   /* Infinity Pro pink — donate, CTAs */
+  --clr-accent-dark:   #b33057;
+  --clr-accent-light:  #fbeaef;
 
-  --clr-yellow:        #f5c41c;   /* sunshine yellow */
+  --clr-yellow:        #f5c41c;   /* sunshine yellow — badges */
 
   --clr-bg:            #fdfaf6;   /* warm cream — not stark white */
   --clr-surface:       #ffffff;
@@ -25,7 +27,14 @@
   --clr-text-muted:    #606878;
   --clr-border:        #e4dfd6;
 
-  --font:              'Poppins', system-ui, sans-serif;
+  /* Notepad ruled-lines texture (light blue on cream) */
+  --notepad-line:      #d6e4f7;
+
+  --font-heading:      'Amatic SC', cursive;
+  --font-body:         'Merriweather', Georgia, serif;
+  --font-ui:           'Roboto', system-ui, sans-serif;
+  --font:              var(--font-body); /* legacy alias */
+
   --radius:            14px;
   --radius-sm:          8px;
   --radius-pill:       999px;
@@ -50,29 +59,46 @@ table { border-collapse: collapse; width: 100%; }
 
 /* --- Base -------------------------------------------------- */
 body {
-  font-family: var(--font);
+  font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.75;
   color: var(--clr-text);
   background: var(--clr-bg);
 }
 
 h1, h2, h3, h4 {
-  line-height: 1.25;
+  font-family: var(--font-heading);
+  line-height: 1.15;
   font-weight: 700;
   color: var(--clr-text);
+  letter-spacing: 0.02em;
 }
-h1 { font-size: clamp(2rem, 5vw, 3rem); }
-h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); }
-h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); }
-h4 { font-size: 1.05rem; }
+/* Amatic SC reads well at larger sizes */
+h1 { font-size: clamp(2.6rem, 6vw, 4rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: 1.4rem; }
 
 p + p { margin-top: .85rem; }
 p + ul, p + ol { margin-top: .5rem; }
 ul.body-list, ol.body-list { padding-left: 1.4rem; list-style: disc; }
 ul.body-list li, ol.body-list li { margin-bottom: .35rem; }
 
-strong { font-weight: 600; }
+strong { font-weight: 700; }
+
+/* --- Notepad texture --------------------------------------- */
+/* Apply .section--notepad to any section for ruled-paper feel */
+.section--notepad {
+  background-color: var(--clr-bg);
+  background-image:
+    repeating-linear-gradient(
+      transparent,
+      transparent 27px,
+      var(--notepad-line) 27px,
+      var(--notepad-line) 28px
+    );
+  background-position: 0 .5rem;
+}
 
 /* --- Layout helpers ---------------------------------------- */
 .container {
@@ -128,7 +154,8 @@ strong { font-weight: 600; }
   gap: .5rem;
   padding: .7rem 1.5rem;
   border-radius: var(--radius-pill);
-  font-weight: 600;
+  font-family: var(--font-ui);
+  font-weight: 700;
   font-size: .95rem;
   text-decoration: none;
   transition: background .18s, transform .12s, box-shadow .18s;
@@ -165,6 +192,7 @@ strong { font-weight: 600; }
 .btn--lg { padding: .95rem 2rem; font-size: 1.05rem; }
 
 /* --- Navigation -------------------------------------------- */
+/* Nav uses Roboto (clean UI sans-serif, not Merriweather body) */
 #site-header {
   position: sticky;
   top: 0;
@@ -177,6 +205,7 @@ strong { font-weight: 600; }
   height: var(--nav-h);
   display: flex;
   align-items: center;
+  font-family: var(--font-ui);
 }
 
 .nav__inner {
@@ -202,6 +231,7 @@ strong { font-weight: 600; }
   width: auto;
 }
 .nav__logo-text {
+  font-family: var(--font-ui);
   font-weight: 700;
   font-size: .9rem;
   line-height: 1.2;
@@ -222,8 +252,9 @@ strong { font-weight: 600; }
 .nav__link {
   display: block;
   padding: .5rem .75rem;
+  font-family: var(--font-ui);
   font-size: .88rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--clr-text);
   text-decoration: none;
   border-radius: var(--radius-sm);
@@ -233,12 +264,30 @@ strong { font-weight: 600; }
 .nav__link:hover,
 .nav__link.active { color: var(--clr-primary); background: var(--clr-primary-light); }
 
+/* Facebook icon nav link */
+.nav__link--social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .4rem .5rem;
+  color: var(--clr-text-muted);
+  border-radius: var(--radius-sm);
+  transition: color .15s, background .15s;
+}
+.nav__link--social:hover {
+  color: #1877f2; /* Facebook blue */
+  background: #e8f0fb;
+}
+.nav__fb-icon { display: block; }
+
+/* Donate button — pink accent */
 .nav__link--donate {
   background: var(--clr-accent);
   color: #fff !important;
   padding: .45rem 1.1rem;
   border-radius: var(--radius-pill);
-  margin-left: .5rem;
+  margin-left: .25rem;
+  font-weight: 700;
 }
 .nav__link--donate:hover { background: var(--clr-accent-dark); }
 
@@ -328,9 +377,26 @@ strong { font-weight: 600; }
   color: var(--clr-text-muted);
 }
 
+.nav__mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem 0;
+}
+
+.nav__mobile-social {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 500;
+}
+.nav__mobile-social:hover { color: #1877f2; }
+
 .nav__mobile-donate {
   display: inline-block;
-  margin: 1rem 1.5rem 0;
   padding: .65rem 1.5rem;
   background: var(--clr-accent);
   color: #fff !important;
@@ -370,6 +436,30 @@ strong { font-weight: 600; }
 .footer__col ul li + li { margin-top: .45rem; }
 .footer__col ul a { font-size: .9rem; }
 
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  color: rgba(255,255,255,.8);
+  transition: background .18s, color .18s;
+  text-decoration: none !important;
+}
+.footer__social-link:hover {
+  background: #1877f2;
+  color: #fff;
+}
+
 .footer__bottom {
   border-top: 1px solid rgba(255,255,255,.1);
   padding-top: 1.5rem;
@@ -380,6 +470,7 @@ strong { font-weight: 600; }
   align-items: center;
   font-size: .82rem;
   opacity: .6;
+  font-family: var(--font-ui);
 }
 
 /* --- Hero -------------------------------------------------- */

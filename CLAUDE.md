@@ -6,13 +6,10 @@ Migrating rccdp.org from WordPress (Cloudways) to a plain HTML/CSS/JS static sit
 ## Client
 - **Site**: rccdp.org — Redwood City Child Development Program
 - **Contact email on record**: annarider@rccdp.org
-- **WP Admin**: rccdp.org/wp-admin — username: anna@garlicdelight.com
+- All server, WP admin, Drive, and Netlify credentials → **see `SECRETS.md`** (gitignored)
 
 ## Server (Cloudways — keep until migration ships)
-- **IP**: 45.77.186.223
-- **SSH**: `ssh webdev@45.77.186.223` (password in 1Password / Cloudways Master Credentials panel)
-- **WP root**: `/home/129366.cloudwaysapps.com/utvwvxhaeu/public_html`
-- **DB name / user**: `utvwvxhaeu` (password in wp-config.php)
+- SSH, WP root path, DB credentials → see `SECRETS.md`
 - **WP-CLI**: available at `/usr/local/bin/wp` — run from inside `public_html`
 
 ## Current WordPress plugins (active)
@@ -49,15 +46,7 @@ Migrating rccdp.org from WordPress (Cloudways) to a plain HTML/CSS/JS static sit
 Redirects go in `_redirects` (Netlify format: `old  new  301`). Build the full mapping when URL structure is finalized.
 
 ## Google Drive — source of truth for PDFs and gallery
-Plugin was `use-your-drive` authenticated as `annarider@rccdp.org`. Folder IDs from page shortcodes:
-
-| Content | Drive Folder ID |
-|---|---|
-| Annual Reports | `1Y8mYKQ3SUG7NGcrE86507XiUSUXPs8eO` |
-| Family Handbooks (EN + ES) | `1FCIf9FaJ_puuNWuD_CajzgZjne4WRqjm` |
-| Full-cost Tuition Applications | `0ABl6P-dybi2iUk9PVA` |
-| Subsidy Applications | `0AE3yQcq75VOnUk9PVA` |
-| Photo Gallery | `0AOhgqBjn5CfQUk9PVA` |
+Plugin was `use-your-drive` authenticated as `annarider@rccdp.org`. Drive folder IDs → **see `SECRETS.md`** (gitignored).
 
 To access via Drive MCP: authenticate as `annarider@rccdp.org` (ask the user which account to use BEFORE calling any Drive MCP tool).
 
